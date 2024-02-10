@@ -1,0 +1,36 @@
+<div class="author">
+    <h1 class="author_heading">Hi, I am Akshat.</h1>
+    <p class="author_body">web developer</p>
+</div>
+
+<img class="hero-image "
+    src="https://images.unsplash.com/photo-1706565026381-29cd21eb9a7c?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    alt="" width="400" height="528">
+
+
+<section class="articles">
+    <h2 class="articles_heading">Least Posts</h2>
+
+    <ul class="article-ul">
+        <% data.forEach(post=> { %>
+            <li>
+                <a href="/post/<%= post._id %>">
+                    <span>
+                        <%= post.title %>
+                    </span>
+                    <span class="article-list__date">
+                        <%= post.CreatedAt.toDateString() %>
+                    </span>
+                </a>
+            </li>
+            <% }) %>
+    </ul>
+
+
+
+    <% if (nextPage !==null) { %>
+        <a href="/?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
+        <% } %>
+
+
+</section>
